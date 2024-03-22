@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class oscars {
+
+	public static void main(String[] args) {
+	 
+       Scanner scan = new Scanner(System.in);
+        String actorName = scan.nextLine();
+        double academyPoints = Double.parseDouble(scan.nextLine());
+        int countExaminers = Integer.parseInt(scan.nextLine());
+ 
+        for (int i = 1; i <= countExaminers; i++) {
+            String examinerName = scan.nextLine();
+            double currentPoint = Double.parseDouble(scan.nextLine());
+ 
+            //Точките, които актьора получава се формират от:
+            // дължината на името на оценяващия умножено по точките, които дава делено на две.
+            academyPoints = academyPoints + examinerName.length() * currentPoint / 2;
+ 
+            if (academyPoints >= 1250.5) {
+                System.out.printf("Congratulations, %s got a nominee for leading role with %.1f!", actorName, academyPoints);
+                break;
+            }
+        }
+        if (academyPoints < 1250.5){
+            double diff = 1250.5 - academyPoints;
+            System.out.printf("Sorry, %s you need %.1f more!", actorName, diff);
+        }
+    }
+	}
+
+
