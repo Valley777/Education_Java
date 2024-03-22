@@ -1,0 +1,50 @@
+import java.util.Scanner;
+public class treckingMania {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner((System.in));
+        int groupNumber = Integer.parseInt(scan.nextLine());
+ 
+        int countP1 = 0;
+        int countP2 = 0;
+        int countP3 = 0;
+        int countP4 = 0;
+        int countP5 = 0;
+ 
+        for (int i = 1; i <= groupNumber; i++) {
+            int climbersCount = Integer.parseInt(scan.nextLine());
+ 
+            //проверка в коя категория попада текущото число -> увеливаме броя на числата в категорията
+            if (climbersCount < 6){
+                countP1 += climbersCount;
+            } else if (climbersCount < 13) {
+                countP2 += climbersCount;
+            }else if (climbersCount < 26) {
+                countP3 += climbersCount;
+            }
+            else if (climbersCount < 41) {
+                countP4 += climbersCount;
+            }else {
+                countP5 += climbersCount;
+            }
+        }
+ 
+        int totalCount = countP1 + countP2 + countP3 + countP4 + countP5;
+ 
+        //създаваме променливи за % на числа в конкретен диапазон
+        double p1Percent = (countP1 * 1.0 / totalCount) * 100;
+        double p2Percent = (countP2 * 1.0 / totalCount) * 100;
+        double p3Percent = (countP3 * 1.0 / totalCount) * 100;
+        double p4Percent = (countP4 * 1.0 / totalCount) * 100;
+        double p5Percent = (countP5 * 1.0 / totalCount) * 100;
+ 
+        //принтираме % за всеки диапазон на нов ред форматирани до втори знак след десетичнaта запетая
+        System.out.printf("%.2f%%%n", p1Percent);
+        System.out.printf("%.2f%%%n", p2Percent);
+        System.out.printf("%.2f%%%n", p3Percent);
+        System.out.printf("%.2f%%%n", p4Percent);
+        System.out.printf("%.2f%%%n", p5Percent);
+
+	}
+
+}
