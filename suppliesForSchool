@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class SuppliesForSchool {
+
+	public static void main(String[] args) {
+		 Scanner scan = new Scanner(System.in);
+		 int pens = Integer.parseInt(scan.nextLine());
+		 int markers = Integer.parseInt(scan.nextLine());
+		 int liquid = Integer.parseInt(scan.nextLine());
+		double discount = scan.nextDouble();
+		 
+		 
+		 double sumpens = pens * 5.80;        // 11.6-OK
+		 double summarkers = markers * 7.20; //3*7.20 = 21.6-OK
+		 double liquidamount = liquid * 1.20; //4*1.20 = 4.80 - OK 
+		
+		 double premises = sumpens + summarkers + liquidamount; //38 -OK
+		 double convertedDiscount = discount/100; //?
+		 
+		 
+		 double finalprice = premises - (premises*convertedDiscount); // 38.00 - 9.5= 28.5
+		 
+		 System.out.println(finalprice);
+
+	}
+
+}
