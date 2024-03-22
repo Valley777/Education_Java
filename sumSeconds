@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Sumseconds {
+
+	public static void main(String[] args) {
+		 Scanner scan = new Scanner(System.in);
+		 int timeFirst = Integer.parseInt(scan.nextLine());
+		 int timeSecond = Integer.parseInt(scan.nextLine());
+		 int timeThird = Integer.parseInt(scan.nextLine());
+		 
+		 //calculations
+		 int totalTime = timeFirst+timeSecond+timeThird;
+		 
+		 int hours = totalTime / 60; 
+		 int minutes = totalTime %60;
+    if(minutes < 10)  { 
+    	System.out.printf("%d:0%d",hours,minutes);
+    } else {
+    	System.out.printf("%d:%d",hours, minutes);
+    }
+	}
+
+}
