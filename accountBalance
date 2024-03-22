@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class accountBalance1 {
+
+	public static void main(String[] args) {
+		 
+Scanner scan = new Scanner(System.in);
+ /*Напишете програма, която пресмята колко общо пари има в сметката, 
+ * след като направите определен брой вноски. На всеки ред ще получавате сумата, 
+ * която трябва да внесете в сметката, до получаване на команда  "NoMoreMoney ". 
+ * При всяка получена сума на конзолата трябва да се извежда "Increase: " + сумата и тя да се прибавя в сметката. 
+ * Ако получите число по-малко от 0 на конзолата трябва да се изведе "Invalid operation!"  и програмата да приключи.
+ *  Когато програмата приключи 
+ * трябва да се принтира "Total: " + общата сума в
+ *  сметката форматирана до втория знак след десетичната запетая. */
+ String n = scan.nextLine();
+ double sum = 0 ;
+ while(!n.equals("NoMoreMoney")) {
+	 if(Double.parseDouble(n)<0) {
+		 System.out.println("Invalid operation!");
+		 break;
+	 }
+	 System.out.printf("Increase: %.2f%n",Double.parseDouble(n) );
+	 sum += Double.parseDouble(n);
+	 n = scan.nextLine();
+ }
+ System.out.printf("Total: %.2f%n", sum);
+	}
+ 
+}
+
