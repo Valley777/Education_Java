@@ -1,0 +1,49 @@
+import java.util.Scanner;
+public class repetition2 {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		// Хистограма
+		int n = Integer.parseInt(scan.nextLine());
+	 
+		int sum1 = 0; //counters
+		int sum2 = 0;
+		int sum3 = 0;
+		int sum4 = 0;
+		int sum5 = 0;
+
+		for (int i = 1; i <=n; i++) {
+			int sequence = Integer.parseInt(scan.nextLine());
+			if (sequence < 200) {
+				sum1 ++;
+			} else if (sequence >= 200 && sequence <= 399) {
+				sum2 ++;
+			} else if (sequence >= 400 && sequence <=599) {
+				sum3 ++;
+			} else if (sequence >= 600 && sequence <= 799) {
+				sum4 ++;
+			} else {
+				sum5 ++;
+			}
+		}
+		 //proverki - broj kum vseki range
+		//System.out.println(sum1);
+	    // System.out.println(sum2);
+	    // System.out.println(sum3);
+	    //System.out.println(sum4);
+	    // System.out.println(sum5); 
+	    //System.out.println(n);
+
+	double	p1 = ((sum1*1.0)/n)* 100;  // 2/3*100
+	double 	p2 = ((sum2*1.0)/n)* 100;
+	double 	p3 = ((sum3*1.0)/n)* 100;
+	double	p4 = ((sum4*1.0)/n)* 100;
+	double	p5 = ((sum5*1.0)/n)* 100;
+		
+		 System.out.println(String.format("%.2f%%",p1));
+	     System.out.println(String.format("%.2f%%",p2));
+	     System.out.println(String.format("%.2f%%",p3));
+	     System.out.println(String.format("%.2f%%",p4));
+	     System.out.println(String.format("%.2f%%",p5));
+
+	}
+}
