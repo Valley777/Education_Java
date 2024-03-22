@@ -1,0 +1,46 @@
+import java.util.Scanner;
+public class figures {
+
+	public static void main(String[] args) {
+	 
+		
+		Scanner scan = new Scanner(System.in);
+		String n = scan.nextLine();
+		
+		switch (n) {
+		
+		case ("square" ): 
+			Scanner scan1 = new Scanner(System.in);
+			 double asq = scan1.nextDouble();
+			 double a1 =asq*asq; 
+			 System.out.println(String.format("%.3f", a1));
+		break;
+			
+		case ("circle"): 
+			Scanner scan2 = new Scanner(System.in);
+		    double acir = scan2.nextDouble();
+		    double a2 = (acir*acir)*Math.PI;
+			 System.out.println(String.format("%.3f", a2));
+		break;
+		
+		case ("rectangle"): 
+			Scanner scan3 = new Scanner(System.in);
+		     double arec = scan3.nextDouble();
+			 double brec = scan3.nextDouble();
+			 double a3 =arec*brec;
+			 System.out.println(String.format("%.3f", a3));
+		break;
+		case ("triangle"):
+			Scanner scan4 = new Scanner(System.in);
+		    double atri = scan4.nextDouble();
+		    double btri = scan4.nextDouble();
+		    double a4 = (atri*btri)*0.5;
+		    System.out.println(String.format("%.3f", a4));
+		break;
+		default: 
+			System.out.println("error");
+		break;
+		}
+	
+		}
+	}
