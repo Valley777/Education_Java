@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class vegMarket {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        /*
+        Градинар продава реколтата от градината си на зеленчуковата борса.
+        Продава зеленчуци за N лева на килограм и плодове за M лева за килограм.
+        Напишете програма, която да пресмята приходите от реколтата в евро (ако приемем, че едно евро е равно на 1.94 лв.).
+         */
+        double kgVeg = Double.parseDouble(scan.nextLine());
+        double kgFruit = Double.parseDouble(scan.nextLine());
+
+        double kgAllveg = Double.parseDouble(scan.nextLine());
+        double kgAllFruit = Double.parseDouble(scan.nextLine());
+
+        double sum = (kgVeg*kgAllveg)+(kgFruit*kgAllFruit);
+        double eur = sum/1.94;
+        System.out.println(eur );
+    }
+}
