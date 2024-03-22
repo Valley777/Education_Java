@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class dailyEarnings {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        double daysMonth = Double.parseDouble(scan.nextLine()); //21*75=1month
+        double moneyDay = Double.parseDouble(scan.nextLine()); //75
+        double rate = Double.parseDouble(scan.nextLine()); //1.59
+
+        double monthIncomeRaw = daysMonth*moneyDay; // доход за месеца = дни от месеца * дневна дажба /us
+        //System.out.println( monthIncomeRaw ); // -OK
+        double yearIncomeRaw = monthIncomeRaw*12 + monthIncomeRaw*2.5;  //доход = доход за месеца*12месеца /us + bonus
+        //System.out.println( yearIncomeRaw); //-OK
+        double tax = yearIncomeRaw*0.25;
+
+        double incomeAfterTaxForYear = yearIncomeRaw - tax; //leva + tax
+         incomeAfterTaxForYear = incomeAfterTaxForYear*rate;
+        double average = incomeAfterTaxForYear /365;
+
+        System.out.printf("%.2f",average);
+
+    }
+}
