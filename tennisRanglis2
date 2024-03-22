@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class tennisRanglist {
+
+	public static void main(String[] args) {
+	
+		Scanner scan = new Scanner(System.in);
+		 
+        int countTurners = Integer.parseInt(scan.nextLine());
+        int currentPoints = Integer.parseInt(scan.nextLine());
+ 
+        int points = 0;
+        int wins = 0;
+ 
+        for (int i = 1; i <= countTurners; i++) {
+            String stage = scan.nextLine();
+ 
+            switch (stage){
+                case "W":
+                    points += 2000;
+                    wins++;
+                    break;
+                case "F":
+                    points += 1200;
+                    break;
+                case "SF":
+                    points += 720;
+                    break;
+            }
+        }
+        System.out.printf("Final points: %d%n", currentPoints + points);
+        System.out.printf("Average points: %d%n", points / countTurners);
+        System.out.printf("%.2f%%", (wins * 1.0 / countTurners) * 100);
+	}
+
+}
