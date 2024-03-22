@@ -1,0 +1,55 @@
+import java.util.Scanner;
+public class vacationWhile {
+
+	public static void main(String[] args) {
+ 
+		        Scanner scanner = new Scanner(System.in);
+		 
+		        double neededMoney = Double.parseDouble(scanner.nextLine());
+		        double availableMoney = Double.parseDouble(scanner.nextLine());
+		 
+		        //Създаваме променливи, с които ще броим изминали дни и последователните дни, в които харчим
+		        int countDays = 0;
+		        int countSpend = 0;
+		 
+		        // Правим while, докато availableMoney < neededMoney
+		        while (availableMoney < neededMoney){
+		            //Проверяваме дали сме получили пет последователни дни spend -> прекратяваме цикъла
+		            if (countSpend == 5){
+		                System.out.println("You can't save the money.");
+		                System.out.println(countDays);
+		                break;
+		            }
+		 
+		            //Увеличаваме броя на дните и прочитаме команда "spend", "save" и прочитаме сумата за харчене или спестяване
+		            countDays++;
+		            String command = scanner.nextLine();
+		            double currentSum = Double.parseDouble(scanner.nextLine());
+		 
+		            //Проверяваме дали харчим или спестяваме и респективно намаляме или увеличаваме парите в касичката
+		            if(command.equals("spend")){
+		                countSpend++;
+		                availableMoney -= currentSum;
+		            }else if(command.equals("save")){
+		                availableMoney += currentSum;
+		                countSpend = 0;
+		            }
+		 
+		            //проверяваме дали парите в касичката са станали отрицателно число -> приравняваме към 0
+		            if (availableMoney < 0){
+		                availableMoney = 0;
+		            }
+		 
+		 
+		        }
+		 
+		        //Проверяваме countSpend == 5 -> не можем да спестим нужните пари
+		        if(countSpend < 5){
+		            System.out.printf("You saved the money for %d days.", countDays);
+		 
+		        }
+		 
+		 
+		    }
+		
+	}
