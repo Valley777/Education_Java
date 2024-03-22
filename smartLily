@@ -1,0 +1,34 @@
+package Examples;
+import java.util.Scanner;
+
+   public class repetition1 {
+	public static void main(String[] args) {
+		 Scanner scan = new Scanner(System.in);
+		 int age = Integer.parseInt(scan.nextLine());
+		double washerPrice= Double.parseDouble(scan.nextLine());
+		 int priceOnetoy = Integer.parseInt(scan.nextLine());
+		 
+		 int sumEvenYears = 0;      //counter 
+		 int savings = 0;          //savings - storage
+		 int numberToys=0;        //numberOddYears to calculate toys
+		 int numberEvenYears =0;  //numberEvenYears to substract 10 for each year from her savings	/brother`s fine	
+	 for (int i = 1; i<=age ; i++) {
+		 if (i%2==0) {
+			 sumEvenYears +=10;
+			 savings+=sumEvenYears;
+			 numberEvenYears++;	 
+		 }
+		 if(i%2 !=0) {
+			 numberToys++;
+		 }
+	 }
+	 //proverka
+	 //System.out.println(savings);
+	 //System.out.println(numberEvenYears);
+	 //System.out.println(numberToys*priceOnetoy);
+	 double money = (savings-numberEvenYears)+(numberToys*priceOnetoy);
+	 //System.out.println(money); /175.0-ok
+	 if(washerPrice <= money) {
+		 System.out.printf("Yes! %.2f", money-washerPrice);
+	 }else { System.out.printf("No! %.2f", Math.abs(washerPrice-money));} 
+	}}
