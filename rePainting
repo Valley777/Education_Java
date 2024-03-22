@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class repainting {
+
+	public static void main(String[] args) {
+	 Scanner scan = new Scanner(System.in);
+	 double protectivePlastic = scan.nextDouble();
+	 double paint = scan.nextDouble();
+	 double aceton = scan.nextDouble();
+	 double hours = scan.nextDouble();
+
+	 double aprotectivePlastic = (protectivePlastic +2) * 1.50;
+	 double apaint =( paint +(paint*0.1))* 14.50;
+	 double aaceton = aceton * 5.00;
+	 double aplasticbags = 0.40;
+	 
+	 double initialamount = aprotectivePlastic + apaint + aaceton + aplasticbags;
+	 double masterpay = (initialamount*0.3);
+	 double finaldamage = initialamount + masterpay;
+	 System.out.println(finaldamage);
+	}
+
+}
