@@ -1,0 +1,161 @@
+import java.util.Scanner;
+
+        public class matchTickets {
+/*Група запалянковци решили да си закупят билети за Евро 2016. Цената на билета се определя спрямо две категории:
+
+VIP – 499.99 лева
+Normal – 249.99 лева
+Запалянковците имат определен бюджет, a броят на хората в групата определя какъв процент от бюджета трябва да се задели за транспорт:
+
+От 1 до 4 – 75% от бюджета
+От 5 до 9 – 60% от бюджета
+От 10 до 24 – 50% от бюджета
+От 25 до 49 – 40% от бюджета
+50 или повече – 25% от бюджета */
+            public static void main(String[] args) {
+                Scanner scan = new Scanner(System.in);
+
+                double budget = Double.parseDouble(scan.nextLine());
+                String category = scan.nextLine().toLowerCase();
+                double numpeople = Double.parseDouble(scan.nextLine());
+
+                double vipprice = 499.99;
+                double normalprice = 249.99;
+
+                boolean peopleUpToFour = (numpeople>= 1 && numpeople<= 4);            //75% от бюджета
+                boolean peopleUpToNine = (numpeople>= 5 && numpeople<= 9);           //60% от бюджета
+                boolean peopleUpToTwentyFour = (numpeople>= 10 && numpeople <= 24); //50% от бюджета
+                boolean peopleUpToFortyNine = (numpeople>= 25 && numpeople <= 49); //40% от бюджета
+                boolean peopleUpToFifty = (numpeople >= 50);                      //25% от бюджета
+
+
+
+                if(peopleUpToFour) {
+                    double budgetNOtransport = (budget-(budget*0.75)); //останал бюджет след транспортните такси
+
+                    if(category.equals("vip") ) {                  //VIP
+                        double ticketFORall = vipprice*numpeople; //очакваната цена на билетите за вс. желаещи
+                        if( budgetNOtransport > ticketFORall) {
+                            double left = budgetNOtransport-ticketFORall;
+                            System.out.println("Yes! You have "+ String.format("%.2f", left) + " leva left." );
+                        }
+                        else if( budgetNOtransport < ticketFORall) {
+                            double notEnouph = ticketFORall-budgetNOtransport;
+                            System.out.println("Not enough money! You need "+ String.format("%.2f",notEnouph)+" leva.");
+                        }
+                    }else if(category.equals("normal")){             //NORMAL
+                        double ticketFORall = normalprice*numpeople; //очакваната цена на билетите за вс. желаещи
+
+                        if( budgetNOtransport> ticketFORall) {
+                            double left = budgetNOtransport-ticketFORall;
+                            System.out.println("Yes! You have "+ String.format("%.2f", left) + " leva left." );
+                        }
+                        else if( budgetNOtransport < ticketFORall) {
+                            double notEnouph = ticketFORall-budgetNOtransport;
+                            System.out.println("Not enough money! You need "+ String.format("%.2f",notEnouph)+" leva.");}
+                    }
+                }else if(peopleUpToNine) {
+                    double budgetNOtransport = (budget-(budget*0.6)); //останал бюджет след транспортните такси
+
+
+                    if(category.equals("vip") ) {                  //VIP
+                        double ticketFORall = vipprice*numpeople; //очакваната цена на билетите за вс. желаещи
+                        if( budgetNOtransport > ticketFORall) {
+                            double left = budgetNOtransport-ticketFORall;
+                            System.out.println("Yes! You have "+ String.format("%.2f", left) + " leva left." );
+                        }
+                        else if( budgetNOtransport < ticketFORall) {
+                            double notEnouph = ticketFORall-budgetNOtransport;
+                            System.out.println("Not enough money! You need "+ notEnouph+" leva.");
+                        }
+                    }else if(category.equals("normal")){             //NORMAL
+                        double ticketFORall = normalprice*numpeople; //очакваната цена на билетите за вс. желаещи
+                        if( budgetNOtransport> ticketFORall) {
+                            double left = budgetNOtransport-ticketFORall;
+                            System.out.println("Yes! You have "+ String.format("%.2f", left) + " leva left." );
+                        }
+                        else if( budgetNOtransport < ticketFORall) {
+                            double notEnouph = ticketFORall-budgetNOtransport;
+                            System.out.println("Not enough money! You need "+ String.format("%.2f",notEnouph)+" leva.");}
+                    }
+                }else if(peopleUpToTwentyFour) {
+                    double budgetNOtransport = (budget-(budget*0.5)); //останал бюджет след транспортните такси
+
+
+                    if(category.equals("vip") ) {                  //VIP
+                        double ticketFORall = vipprice*numpeople; //очакваната цена на билетите за вс. желаещи
+                        if( budgetNOtransport > ticketFORall) {
+                            double left = budgetNOtransport-ticketFORall;
+                            System.out.println("Yes! You have "+ String.format("%.2f", left) + " leva left." );
+                        }
+                        else if( budgetNOtransport < ticketFORall) {
+                            double notEnouph = ticketFORall-budgetNOtransport;
+                            System.out.println("Not enough money! You need "+ String.format("%.2f",notEnouph)+" leva.");
+                        }
+                    }else if(category.equals("normal")){             //NORMAL
+                        double ticketFORall = normalprice*numpeople; //очакваната цена на билетите за вс. желаещи
+                        if( budgetNOtransport> ticketFORall) {
+                            double left = budgetNOtransport-ticketFORall;
+                            System.out.println("Yes! You have "+ String.format("%.2f", left) + " leva left." );
+                        }
+                        else if( budgetNOtransport < ticketFORall) {
+                            double notEnouph = ticketFORall-budgetNOtransport;
+                            System.out.println("Not enough money! You need "+ String.format("%.2f",notEnouph)+" leva.");}
+                    }
+
+                }else if(peopleUpToFortyNine) {
+                    double budgetNOtransport = (budget-(budget*0.4)); //останал бюджет след транспортните такси
+
+
+                    if(category.equals("vip") ) {                  //VIP
+                        double ticketFORall = vipprice*numpeople; //очакваната цена на билетите за вс. желаещи
+                        if( budgetNOtransport > ticketFORall) {
+                            double left = budgetNOtransport-ticketFORall;
+                            System.out.println("Yes! You have "+ String.format("%.2f", left) + " leva left." );
+                        }
+                        else if( budgetNOtransport < ticketFORall) {
+                            double notEnouph = ticketFORall-budgetNOtransport;
+                            System.out.println("Not enough money! You need "+ String.format("%.2f",notEnouph)+" leva.");
+                        }
+                    }else if(category.equals("normal")){             //NORMAL
+                        double ticketFORall = normalprice*numpeople; //очакваната цена на билетите за вс. желаещи
+                        if( budgetNOtransport> ticketFORall) {
+                            double left = budgetNOtransport-ticketFORall;
+                            System.out.println("Yes! You have "+ String.format("%.2f", left) + " leva left." );
+                        }
+                        else if( budgetNOtransport < ticketFORall) {
+                            double notEnouph = ticketFORall-budgetNOtransport;
+                            System.out.println("Not enough money! You need "+ String.format("%.2f",notEnouph)+" leva.");}
+                    }
+
+                }else if(peopleUpToFifty) {
+                    double budgetNOtransport = (budget-(budget*0.25)); //останал бюджет след транспортните такси
+
+
+                    if(category.equals("vip") ) {                  //VIP
+                        double ticketFORall = vipprice*numpeople; //очакваната цена на билетите за вс. желаещи
+                        if( budgetNOtransport > ticketFORall) {
+                            double left = budgetNOtransport-ticketFORall;
+                            System.out.println("Yes! You have "+ String.format("%.2f", left) + " leva left." );
+                        }
+                        else if( budgetNOtransport < ticketFORall) {
+                            double notEnouph = ticketFORall-budgetNOtransport;
+                            System.out.println("Not enough money! You need "+ String.format("%.2f",notEnouph)+" leva.");
+                        }
+                    }else if(category.equals("normal")){             //NORMAL
+                        double ticketFORall = normalprice*numpeople; //очакваната цена на билетите за вс. желаещи
+                        if( budgetNOtransport> ticketFORall) {
+                            double left = budgetNOtransport-ticketFORall;
+                            System.out.println("Yes! You have "+ String.format("%.2f", left) + " leva left." );
+                        }
+                        else if( budgetNOtransport < ticketFORall) {
+                            double notEnouph = ticketFORall-budgetNOtransport;
+                            System.out.println("Not enough money! You need "+ String.format("%.2f",notEnouph)+" leva.");}
+                    }
+                }
+
+
+            }
+
+        }
+
