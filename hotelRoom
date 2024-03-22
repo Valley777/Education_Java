@@ -1,0 +1,70 @@
+import java.util.Scanner;
+public class hotelRoom {
+    public static void main(String[] args) {
+ 
+                Scanner scaner = new Scanner(System.in);
+                String month = scaner.nextLine().toLowerCase();
+                double nights = Double.parseDouble(scaner.nextLine());
+
+                boolean mayOctober = ((month.equals("may")) || (month.equals("october")));
+                boolean juneSeptember = (month.equals("june")) || (month.equals("september"));
+                boolean julyAugust = (month.equals("july")) || (month.equals("august"));
+
+                if( mayOctober ) {
+
+                    if( nights<=7 ) {
+                        double priceNightsStudio = (int) nights*50;     // цена за вс нощувки до 7 дни - Студио  		 
+                        double priceNightsApartment = (int) nights*65; // цена за вс нощувки до 7 дни - Апартамент 
+                        System.out.println("Apartment: "+ String.format("%.2f",priceNightsApartment) + " lv.");
+                        System.out.println("Studio: "+ String.format("%.2f",priceNightsStudio) + " lv.");
+
+                    }else if( nights>=8 && nights<=14 ) {
+                        double priceNightsStudio =   nights*50;     // цена за вс нощувки от 8 до 14 дни - Студио - 5% намаление		 
+                        double priceNightsApartment =   nights*65; //  цена за вс нощувки от 8 до 14 дни - Апартамент 
+                        double priceNightsStudioDiscount = priceNightsStudio - (priceNightsStudio*0.05);
+                        System.out.println("Apartment: "+ String.format("%.2f",priceNightsApartment) + " lv.");
+                        System.out.println("Studio: "+ String.format("%.2f",priceNightsStudioDiscount) + " lv.");
+
+                    }else if( nights>=15 ) {
+                        double priceNightsStudio =    nights*50;     // цена за вс нощувки, повече от 14 дни - Студио - 30% намаление		 
+                        double priceNightsApartment =   nights*65; // цена за вс нощувки, над 14 - Апартамент - 10%
+                        double priceNightsStudioDiscount = priceNightsStudio - (priceNightsStudio*0.3);
+                        double priceNightsApartmentDiscount = priceNightsApartment-(priceNightsApartment*0.1);
+                        System.out.println("Apartment: "+ String.format("%.2f",priceNightsApartmentDiscount) + " lv.");
+                        System.out.println("Studio: "+ String.format("%.2f",priceNightsStudioDiscount) + " lv.");
+                    }
+                }else if( juneSeptember ) {
+                    if( nights<=14 ) {
+                        double priceNightsStudio = nights*75.20;     // цена за вс нощувки до 7 дни - Студио  		 
+                        double priceNightsApartment =   nights*68.70; // цена за вс нощувки до 7 дни - Апартамент 
+                        System.out.println("Apartment: "+ String.format("%.2f",priceNightsApartment) + " lv.");
+                        System.out.println("Studio: "+ String.format("%.2f",priceNightsStudio) + " lv.");
+
+                    }else if( nights>=15 ) {
+                        double priceNightsStudio =  nights*75.20;     // цена за вс нощувки над 14  - Студио  20%		 
+                        double priceNightsApartment =   nights*68.70; // цена за вс нощувки над 14- Апартамент 10%
+                        double priceNightsStudioDiscount = priceNightsStudio - (priceNightsStudio*0.2);
+                        double priceNightsApartmentDiscount = priceNightsApartment-(priceNightsApartment*0.1);
+                        System.out.println("Apartment: "+ String.format("%.2f",priceNightsApartmentDiscount) + " lv.");
+                        System.out.println("Studio: "+ String.format("%.2f",priceNightsStudioDiscount) + " lv.");
+                    }
+
+                }else if( julyAugust ) {
+                    if( nights<=14 ) {
+                        double priceNightsStudio = nights*76;     // цена за вс нощувки под 14  - Студио  		 
+                        double priceNightsApartment =  nights*77; // цена за вс нощувки под 14  - Апартамент 
+                        System.out.println("Apartment: "+ String.format("%.2f",priceNightsApartment) + " lv.");
+                        System.out.println("Studio: "+ String.format("%.2f",priceNightsStudio) + " lv.");
+                    }else if(nights >= 15){
+                        double priceNightsStudio = nights*76;     // цена за вс нощувки под 14  - Студио  		 
+                        double priceNightsApartment =  nights*77; // цена за вс нощувки под 14  - Апартамент 10%
+                        double priceNightsApartmentDiscount = priceNightsApartment-(priceNightsApartment*0.1);
+                        System.out.println("Apartment: "+ String.format("%.2f",priceNightsApartmentDiscount)+ " lv.");
+                        System.out.println("Studio: "+ String.format("%.2f",priceNightsStudio)+ " lv.");
+                    }
+
+                }
+
+            }
+
+        }
