@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class readingText  {
+
+	public static void main(String[] args) {
+	Scanner scan = new Scanner(System.in);
+	//Напишете програма, която чете текст от конзолата (стринг) и го принтира, докато не получи командата "Stop".
+      String n = scan.nextLine();
+      while(!n.equals("Stop")){
+    	
+    	  System.out.println(n);
+    	  n = scan.nextLine();
+      }
+	}
+
+}
