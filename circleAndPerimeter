@@ -1,0 +1,13 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+public class simpleCalc {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        double r = Double.parseDouble(scan.nextLine());
+        double area = Math.PI * r * r;
+        double perimeter = 2.0 * Math.PI * r;
+        System.out.printf("Area = %f",area);
+        System.out.println("");
+        System.out.printf("Perimeter = %f", perimeter);
+    }
+}
