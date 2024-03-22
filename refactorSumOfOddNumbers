@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class sumOfOddNumbers {
+    public static void main(String[] args) {
+       Scanner sc = new Scanner (System.in);
+       int number = Integer.parseInt(sc.nextLine());
+       int  oddSum = 0;
+       for (int i=1; i<number+number; i++){
+               if(i%2 !=0){
+                  oddSum = oddSum + i;  //5>1,4,9 //0+1+2+3+4+5
+
+                   System.out.println(i);
+               }
+
+       }
+
+       System.out.printf("Sum: %d", oddSum); //1,3,5 +1
+    }
+}
