@@ -1,0 +1,25 @@
+package Examples;
+import java.util.Scanner;
+public class projectfirm {
+
+	public static void main(String[] args) {
+	 Scanner scan = new Scanner(System.in);
+	 int hoursneeded = scan.nextInt(); // 90 необходимите работни часове
+	 int companydays = scan.nextInt(); //7 дните с които фирмата разполага 
+	 int numemployees = scan.nextInt(); //3 бр служителъ
+	 
+	 double companydaysno10percent = (companydays-(companydays*0.1));  //7-0.7 = 6.3 работни дни 
+	 double totalhoursperdays = companydaysno10percent *10;   // остатък работни дни *10 часа за служител
+	 double worktimeforallemployees = totalhoursperdays*numemployees; //-общо часове за всички работници 
+	      
+	 if(hoursneeded < worktimeforallemployees) {
+		double  hoursleft= worktimeforallemployees - hoursneeded;
+		 System.out.println("Yes!"+ String.format("%.0f",hoursleft) +" hours left.");
+	 }else if( hoursneeded > worktimeforallemployees) {
+		 double hoursnotenouph = hoursneeded - worktimeforallemployees;
+		 System.out.println("Not enough time!"+ String.format("%.0f", hoursnotenouph) +" hours needed.");
+	 }
+
+	}
+
+}
