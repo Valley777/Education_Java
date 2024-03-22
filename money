@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class bicoins {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner (System.in);
+          // обмени пари в евро
+        double bitcoins = Double.parseDouble(scan.nextLine());
+        double chn = Double.parseDouble(scan.nextLine());
+        double tax = Double.parseDouble(scan.nextLine());
+        tax = tax/100;
+       //Rates
+       double bitcoinR = 1168.0; //1168.0 leva
+       double chnR = 0.15;      //0.15 dollars
+       double usR = 1.76;     //1.76 лева
+       double eurR = 1.95;   // 1.95 лева.
+
+
+        double bitcoinAll = bitcoins*bitcoinR;  //convert leva
+        double chnALl = chn*chnR; //converted dollar
+        double chnAll = chnALl*usR;  //converted to leva
+        double all = (bitcoinAll+chnAll) ; //leva
+        double eur = all/1.95;
+        eur = eur-(eur*tax);
+        System.out.println(eur);
+
+
+
+    }
+}
