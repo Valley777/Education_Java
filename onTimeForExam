@@ -1,0 +1,50 @@
+import java.util.Scanner;
+public class onTimeForExam {
+    public static void main(String[] args) {
+
+                Scanner scan = new Scanner(System.in);
+                int examHours = scan.nextInt();
+                int examMinutes = scan.nextInt();
+                int arrivalHours = scan.nextInt();
+                int arrivalMinutes = scan.nextInt();
+/*Студент трябва да отиде на изпит в определен час (например в 9:30 часа). Той идва в изпитната зала в даден час на пристигане (например 9:40). Счита се, че студентът е дошъл навреме, ако е пристигнал в часа на изпита или до половин час преди това.
+Ако е пристигнал повече от 30 минути по-рано, той е подранил.
+Ако е дошъл след часа на изпита, той е закъснял.
+ */
+                String late = "Late";
+                String onTime = "On time";
+                String early = "Early";
+
+                int examTime = (examHours *60) + examMinutes; //време на изпита в минути
+                int arrivalTime = (arrivalHours*60) + arrivalMinutes; //време на пристигане в минути
+                int totalMinutesDifference = arrivalTime - examTime; //разлика - време на изпит спрямо пристигане
+                String studentArrival = late;
+                if (totalMinutesDifference<-30) {
+                    studentArrival= early;
+                }else if (totalMinutesDifference <= 0) {
+                    studentArrival = onTime;
+                }
+                String result = "";
+                if (totalMinutesDifference !=0) {
+                    int hoursDifference = Math.abs(totalMinutesDifference/60);
+                    int minutesDifference = Math.abs(totalMinutesDifference %60 );
+
+                    if(hoursDifference > 0 ) {
+                        result = String.format("%d:%02d hours", hoursDifference, minutesDifference);
+                    }else {
+                        result = minutesDifference  + " minutes";
+                    }
+                    if (totalMinutesDifference<0) {
+                        result += " before the start";
+                    }else {
+                        result += " after the start";
+                    }
+                }
+                System.out.println(studentArrival);
+                if (!result.isEmpty()) {
+                    System.out.println(result);
+                }
+            }
+
+        }
+
