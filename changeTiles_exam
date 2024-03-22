@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class changeTiles {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        double blockLength = Double.parseDouble(scan.nextLine());    //ploshatdka
+
+
+        double porcelanLength = Double.parseDouble(scan.nextLine()); //plochki
+        double porcelanWitdh = Double.parseDouble(scan.nextLine());
+
+        double benchWitdh = Double.parseDouble(scan.nextLine());     //peika
+        double benchLength = Double.parseDouble(scan.nextLine());
+
+        double blockArea = blockLength * blockLength; //total Area
+        double benchArea = benchWitdh*benchLength;  //area for the bench
+        blockArea -= benchArea;  // area with no bench
+
+        double porcelaniNumber = blockArea /(porcelanLength*porcelanWitdh);
+        double timeForApplications = porcelaniNumber * 0.2;
+        System.out.println(porcelaniNumber);
+        System.out.println(timeForApplications );
+    }
+}
