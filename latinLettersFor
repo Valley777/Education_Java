@@ -1,0 +1,10 @@
+public class latinLetters {
+    public static void main(String[] args) {
+        System.out.println("Latin alphabet: " );
+        for(char letter ='a';letter<='z';letter++){
+            //програма, която отпечатва буквите от латинската азбука: a, b, c, …, z.
+            System.out.print(" " +letter);
+        }
+        System.out.println( );
+    }
+}
