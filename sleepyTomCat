@@ -1,0 +1,28 @@
+package Examples;
+import java.util.Scanner;
+
+public class SleepyTomCat { 
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int holidays = scan.nextInt(); //20 dni -входящи данни
+		int workingdays = (365-holidays); //345  - работните дни за годината
+		int norm = 30000;
+		int realplaytimehours = workingdays*63+ holidays*127; //24275   - смятаме по дни(работни и почивни) за година часовете за игра 
+		int normresult = norm - realplaytimehours; //30000 - 24275  = 5725  вадим от максимума допустим за котката часове за игра годишните(работни и почивни) часове за игра - - 5725 от 30000
+		double normh = normresult/60; //95.41666666666667  - обръщаме получените реални часове за игра в часове и минути
+	    double minutes = normresult % 60; //25.0 
+	    
+        double normh1 = Math.abs(normh);
+        double minutes1 = Math.abs(minutes);
+	     
+	     if (norm > realplaytimehours) {
+		  System.out.println("Tom sleeps well \n" + String.format("%.0f", normh1) + " hours and " + String.format("%.0f", minutes1 ) +  " minutes less for play");
+	      } 
+	     else if(norm < realplaytimehours) {
+	    	 System.out.println("Tom will run away\n"
+	    	 		+  String.format("%.0f", normh1)+ " hours and "+  String.format("%.0f", minutes1 )+" minutes more for play");
+	     }
+	     
+	     }
+	}
+
