@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class trainingLab {
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+        double length = Double.parseDouble(scan.nextLine());
+        double width = Double.parseDouble(scan.nextLine());
+/* От конзолата: Широчина и дължина в метри
+ Едно работно място заема 70 на 120 cm (маса с размер 70 на 40 cm + място за стол и преминаване с размер 70 на 80 cm).
+ Коридорът е широк поне 100 cm. Изчислено е, че заради входната врата (която е с отвор 160 cm)
+ се губи точно 1 работно място, а заради катедрата (която е с размер 160 на 120 cm) се губят точно 2 работни места.
+ - Решение: 
+ 1. Обръщаме вх данни в метри; 
+ 2. Изчисляваме колко места има спрямо колони и редове; 
+ 3. Умн на местата от колоните и редовете и изваждане на "изгубените".
+ */
+
+        width = width * 100;            //convert the given width and length to cm /from meters
+        length  = length * 100;
+        double widthNoCorridor = width-100;
+
+        widthNoCorridor = Math.floor(widthNoCorridor);
+        length = Math.floor(length);
+
+        int cols = (int)(widthNoCorridor /70);      // calculate seats from columns for the room  //11
+        //System.out.println(cols +"columns" );
+
+        int rows =(int)(length/120);         //calculate seats from rows for the room         //12
+        // System.out.println(rows+"rows");
+
+         int seats = (rows *cols)-3;           //11*12-3
+        System.out.println( seats);
+
+    }
+}
