@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class foreignLanguages {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String country = sc.nextLine();
+        boolean isEnglish = (country.equals("USA")||country.equals("England")||country.equals("Australia"));
+        boolean isSpanish = (country.equals("Spain")||country.equals("Argentina")||country.equals("Mexico"));
+        if(isEnglish){
+            System.out.print("English");
+        }else if(isSpanish){
+            System.out.print("Spanish");
+        }else{
+            System.out.print("unknown");
+        }
+    }
+}
