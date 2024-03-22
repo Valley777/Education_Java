@@ -1,0 +1,45 @@
+import java.util.Scanner;
+public class trip {
+
+    public static void main(String[] args) {
+        Scanner scan  = new Scanner(System.in);
+/* Млад програмист разполага с определен бюджет и свободно време в даден сезон.
+
+Напишете програма, която да приема на входа бюджета и сезона, а на изхода да изкарва къде ще почива програмистът и колко ще похарчи.*/
+        double budget = Double.parseDouble(scan.nextLine());
+        String season = scan.nextLine().toLowerCase();
+
+        boolean inRangeTo100  =  (budget < 100 || budget == 100); //Bulgaria
+        boolean inRangeto1000 = (budget > 100 && budget <= 1000); //Balkans
+        boolean aboveRange1000 = (budget > 1000);               //Europe
+
+        double expences = 0.0;
+
+        if(inRangeTo100) {                          //Bulgaria
+            if(season.equals("summer")) {
+                expences = budget*0.3;
+                System.out.println( "Somewhere in Bulgaria \nCamp - "+ String.format("%.2f", expences));
+
+            }else if(season.equals("winter")) {
+                expences = budget*0.7;
+                System.out.println( "Somewhere in Bulgaria \nHotel - "+ String.format("%.2f", expences));
+            }
+        }else if(inRangeto1000) {                   //Balkans
+            if(season.equals("summer")) {
+                expences = budget*0.4;
+                System.out.println( "Somewhere in Balkans \nCamp - "+ String.format("%.2f", expences));
+            }else if(season.equals("winter")) {
+                expences = budget*0.8;
+                System.out.println( "Somewhere in Balkans \nHotel - "+ String.format("%.2f", expences));
+            }
+        }else if(aboveRange1000) {                 //Europe
+            expences = budget*0.9;
+            System.out.println( "Somewhere in Europe \nHotel - "+ String.format("%.2f", expences));
+        }
+
+
+
+    }
+
+}
+
