@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class ranglist {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int tur = Integer.parseInt(scan.nextLine()); // Брой турнири, в които е участвал
+		int startPoints = Integer.parseInt(scan.nextLine()); // Начален брой точки в ранглистата
+ 
+		int sum = 0;;
+        int wins = 0;
+     
+		for (int i = 1; i <= tur; i++) {
+			String phase = scan.nextLine().toLowerCase();
+		
+			switch(phase) {
+			case("w"):
+				sum += 2000;
+			    wins += 1;
+				break;
+			case("f"):
+				sum += 1200;
+				break;
+			case ("sf"):
+				sum += 720;
+				break;
+		} 
+	}
+		int pointsAfterTournament = sum+startPoints;       //Всички Точки след изиграване на турнирите(начални точки +точки от фаза)
+		int averagePoint = sum/tur;                         //Средно спечелени точки за турнир
+		double wins1 = wins*1.0;
+		double tur1 = tur*1.0;
+		
+		System.out.printf("Final points: %d\n",pointsAfterTournament);
+		System.out.printf("Average points: %d\n", averagePoint); 
+		System.out.printf("%.2f%%", (wins1/tur1)*100); // Процент спечелени турнири
+
+}}
