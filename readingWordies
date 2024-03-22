@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class readingWordies {
+
+	public static void main(String[] args) {
+	Scanner h = new Scanner(System.in);
+	String a = h.nextLine();
+	
+	while(!a.equals("Stop")) {
+		System.out.println(a);
+		a= h.nextLine();
+	}
+
+	}
+
+}
