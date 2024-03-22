@@ -1,0 +1,22 @@
+import java.util.Calendar;
+import java.util.*;
+import java.text.*;
+public class dateAfterBIRTH {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String dateToday = scan.next();                                           //Declare the Actual Date
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");  //Specify a Valid Date Format to Match the Given Date
+        Calendar calendar = Calendar.getInstance();   //Set the calendar object according to the given Date
+        try{
+            calendar.setTime(dateFormat.parse(dateToday));
+        }catch(ParseException excep){
+            excep.printStackTrace();
+        }
+        //Add Days to Date Using add() Method
+        calendar.add(Calendar.DAY_OF_MONTH, 1000);
+        String modifiedDate = dateFormat.format(calendar.getTime());
+        //Print the Modified Date
+        System.out.println(modifiedDate);
+    }
+}
+
