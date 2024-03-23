@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class mathMinMAX {
+    public static void main(String[] args) {
+        int a= 2;
+        int b= 3;
+        int c= 4;
+        int d= 5;
+        int e= 6;
+        int f= 7;
+
+        //1. Find the highest number from 7 given numbers
+
+        int g =(Math.max(Math.max (Math.max(Math.max (Math.max(a, b),c),d),e),f));
+        System.out.println( g);                                     //illustration results 7
+
+
+        //2. Compare 7 numbers but pick the one which is before the last one - use one row
+
+        int h =(Math.min(Math.max (Math.max(Math.max (Math.max(a, b),c),d),e),f));
+        System.out.println(h );                                  //illustration results 6
+    }
+}
