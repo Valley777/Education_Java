@@ -1,0 +1,58 @@
+import java.util.Scanner;
+public class opit1 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int b=4;              //conversion with for>>String >>int
+        int calc = 0;
+        String sum1 =  "";
+        String sum2 =  "";
+        String sum3 =  "";
+        String sum4 =  "";
+        String sum5 =  "";
+        String sum6 =  "";
+        String sum7 =  "";
+
+        int p1 = 0;
+        int p2 = 0;
+        int p3 = 0;
+        int p4 = 0;
+        int p5 = 0;
+        int p6 = 0;
+        int p7 = 0;
+        for(int i=1; i<=b*2; i++){  //entering 7 values from range 8 all as string then convert to int and calculate em
+            String  words = scan.nextLine();
+          if(i==1){
+          sum1=words;
+          }
+          if(i==2){
+            sum2=words;
+            }
+            if(i==3){
+                sum3=words;
+            }
+            if(i==4){
+                sum4=words;
+            }
+            if(i==5){
+                sum5=words;
+            }
+            if(i==6){
+                sum6=words;
+            }
+            if(i==7){
+                sum7=words;
+            }
+        }
+        p1=Integer.valueOf (sum1);
+        p2=Integer.valueOf (sum2);
+        p3=Integer.valueOf (sum3);
+        p4=Integer.valueOf (sum4);
+        p5=Integer.valueOf (sum5);
+        p6=Integer.valueOf (sum7);
+
+        calc = p1+p2+p3+p4+p5+p6+p7; //10298
+        calc=calc-10000;
+        System.out.printf("Goal reached! Good job!%n298 steps over the goal!",calc);
+
+    }
+}
