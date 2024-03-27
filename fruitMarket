@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class fruitMarket {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        double qgodiLV = Double.parseDouble(scan.nextLine());
+        double bananiKG = Double.parseDouble(scan.nextLine());
+        double portokaliKG = Double.parseDouble(scan.nextLine());
+        double maliniKG = Double.parseDouble(scan.nextLine());
+        double qgodiKG = Double.parseDouble(scan.nextLine());
+
+
+   double finalpriceQgodi = (qgodiLV*qgodiKG);
+   double maliniPriceNoKG = qgodiLV/2;   //цената на малините е на половина по-ниска от тази на ягодите;
+   double portokaliPriceNoKG = maliniPriceNoKG-(maliniPriceNoKG*0.4); //цената на портокалите е с 40% по-ниска от цената на малините;
+   double bananiPriceNoKG = maliniPriceNoKG-(maliniPriceNoKG*0.8);  //цената на бананите е с 80% по-ниска от цената на малините.
+
+   double finalMalini =maliniKG*maliniPriceNoKG;
+   double finalPortokali = portokaliPriceNoKG*portokaliKG;
+   double finalBanani = bananiPriceNoKG*bananiKG;
+
+   double sum = (finalpriceQgodi+ finalMalini+finalPortokali+finalBanani);
+
+   System.out.printf("%.2f",sum);
+    }
+
+}
