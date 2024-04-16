@@ -1,0 +1,41 @@
+import java.util.Scanner;
+public class logistics {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        double cargoCaunt = Double.parseDouble(scan.nextLine());
+        double sum1 = 0.0; //counters
+        double sum2 = 0.0;
+        double sum3 = 0.0;
+
+        double sequenceSum=0.0;
+
+
+        for (int i = 1; i <= cargoCaunt; i++) {
+            int sequence = Integer.parseInt(scan.nextLine());
+            boolean upTo3 = (sequence<=3);
+            boolean upTo11 = (sequence>3 && sequence<=11);
+            boolean over11Tons= (sequence>11);
+
+            if (upTo3) {
+                sum1 +=sequence;
+            }
+            if(upTo11)   {
+                sum2 +=sequence;
+            }
+            if (over11Tons) {
+                sum3 +=sequence;
+            }
+            sequenceSum+=sequence;
+        }
+
+
+        double	p1 =  (sum1/sequenceSum)*100 ;  //   >> percentage
+        double 	p2 =  (sum2/sequenceSum)*100;
+        double 	p3 = (sum3/sequenceSum)* 100;
+
+         double averagePrice = (sum1*200+sum2*175+sum3*120)/sequenceSum;
+
+         System.out.printf("%.2f%n%.2f%%%n%.2f%%%n%.2f%%%n",averagePrice,p1,p2,p3);
+
+    }
+}
